@@ -1,0 +1,118 @@
+when:
+    - "After [player] casts a [card_type]"
+    - "After [player.possessive] turn ends"
+
+    - "[actor] takes damage"
+    - "[actor] is healed"
+
+    - "[minion] enters play"
+    - "a [actor] attacks"
+    - "a [actor] blocks"
+    - "a [actor] deals damage"
+    - "[minion] dies"
+    - "a [actor] is [state]"
+
+player:
+    you:
+        text: your hero
+        possessive: your
+        alignment: friendly
+
+    opponent:
+        text: your opponent
+        possessive: your opponent's
+        alignment: enemy
+
+    player:
+        text: a player
+        possessive: a player's
+        alignment: neutral
+
+actor:
+    minion:
+        text: "[alignment] minion"
+        this: "this minion"
+        friendly:
+
+    player:
+        text: "[player]"
+    character:
+
+
+card_type:
+    - card
+    - minion
+    - spell
+    - "[keyword]"
+
+alignment:
+    - friendly
+    - enemy
+    - # either or
+
+
+minion:
+    - this minion
+    - a minion
+    - a [alignment] minion
+    - an adjacent minion
+    - a [state] minion
+    - a [trait] minion
+    - a [keyword] minion
+
+trait:
+    - Charge
+    - Deathtouch
+    - Divine Shield
+    - Immune
+    - Hexproof
+    - Stealth
+    - Taunt
+    - Windfury
+
+state:
+    - damaged
+    - healed
+    - frozen
+
+while:
+    - "[player] controls a [state] minion"
+    - "[player] controls a [trait] minion"
+
+auto_targets:
+    - "all [alignment] [actor]s"
+    - "a random [alignment] [actor]"
+    - "adjacent minions"
+    - "all [trait] minions"
+    - "all [state] minions"
+    - "all [keyword] minions"
+
+keyword:
+    - Murloc
+    - Beast
+    - Mech
+    - Dragon
+
+directions:
+    - increase
+    - decrease
+
+stat:
+    - Health
+    - Cost
+    - Attack
+
+targeted_effect:
+    - take \# damage
+    - "[direction]s # [stat]"
+    - "gains [trait]"
+    - is destroyed
+    - is frozen
+    - is return to their owned hand
+    - is Silenced
+
+misc_effects:
+    - "[player] draws a card"
+    - "[player] discards a card at random"
+    - "[player] gains a mana"
+    - "[player] summons a 1/1"
